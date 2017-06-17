@@ -86,7 +86,7 @@ class IncrementalMatcher {
 
     // Step 2: Adjust memo table
     this.memoTable = m.slice(0, startPos).concat(
-        new Array(r.length),
+        new Array(r.length).fill(null),
         m.slice(endPos));
 
     // Step 3: Invalidate overlapping entries
