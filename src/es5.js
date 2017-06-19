@@ -1,3 +1,12 @@
+/*
+  Exports a function which is a factory for ES5 parsers.
+  To build a parser, call the function with either the `standard` or `incremental`
+  module as an argument. E.g., in Node.js:
+
+      var es5 = require('./es5');
+      var matcher = es5(require('./standard'));
+      var incMatcher = es5(require('./incremental'));
+ */
 module.exports = ns => {
   const _ = value => new ns.Terminal(value);
   const app = ruleName => new ns.RuleApplication(ruleName);
