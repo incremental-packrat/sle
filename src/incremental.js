@@ -95,7 +95,7 @@ class IncrementalMatcher {
       if (col != null &&
           pos + col.maxExaminedLength > startPos) {
         var newMax = 0;
-        for (var [entry, ruleName] of col.memo) {
+        for (var [ruleName, entry] of col.memo) {
           var examinedLen = entry.examinedLength;
           if (pos + examinedLen > startPos) {
             col.memo.delete(ruleName);
