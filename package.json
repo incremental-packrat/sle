@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.6.3"
+  },
+  "scripts": {
+    "test": "tape test/test-*.js | faucet"
+  }
+}
