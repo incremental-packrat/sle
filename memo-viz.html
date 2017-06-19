@@ -262,7 +262,7 @@
           }
           ans.push(extMemoRecs.get(memoRec));
         }
-        return ans.reverse();
+        return ans;
       },
       styleObj() {
         return {position: 'relative', left: this.posLeft + 'px'};
@@ -437,19 +437,10 @@
       var rep = exp => new Repetition(exp);
       var not = exp => new Not(exp);
 
-/*
       this._matcher = new Matcher({
         start: app('expr'),
         expr: choice(seq(app('num'), _('+'), app('num')),
-                     seq(app('num'), _('_'), app('num'))),
-        num: seq(app('digit'), rep(app('digit'))),
-        digit: choice(_('0'), _('1'), _('2'), _('3'), _('4'), _('5'), _('6'), _('7'), _('8'), _('9'))
-      });
-*/
-
-      this._matcher = new Matcher({
-        start: app('exp'),
-        exp: seq(app('num'), _('-'), app('num')),
+                     seq(app('num'), _('-'), app('num'))),
         num: seq(app('digit'), rep(app('digit'))),
         digit: choice(_('0'), _('1'), _('2'), _('3'), _('4'), _('5'), _('6'), _('7'), _('8'), _('9'))
       });
