@@ -252,6 +252,12 @@
         }
         for (let ruleName in this.entries) {
           const memoRec = this.entries[ruleName];
+
+          // Skip 'start', as it's sort of an implementation detail.
+          if (ruleName === 'start') {
+            continue;
+          }
+
           if (!extMemoRecs.has(memoRec)) {
             const failed = memoRec.cst == null;
             extMemoRecs.set(memoRec, Object.assign({
