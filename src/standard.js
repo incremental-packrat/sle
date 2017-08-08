@@ -138,7 +138,7 @@ class Sequence extends PExp {
   }
 }
 
-class Not extends PExp {
+class Lookahead extends PExp {
   constructor(exp) {
     super();
     this.exp = exp;
@@ -146,11 +146,16 @@ class Not extends PExp {
 
   eval(matcher) {
     var origPos = matcher.pos;
-    if (this.exp.eval(matcher) === null) {
-      matcher.pos = origPos;
-      return [];
-    }
-    return null;
+    var ans = this.exp.eval(matcher);
+    matcher.pos = origPos;
+    return ans;
+  }
+}
+
+class Not extends Lookahead {
+  eval(matcher) {
+    var ans = super.eval(matcher);
+    return ans === null ? true : null;
   }
 }
 
@@ -177,6 +182,6 @@ class Repetition extends PExp {
 }
 
 // Exports
-return {Matcher, PExp, Terminal, RuleApplication, Choice, Sequence, Repetition, Not};
+return {Matcher, PExp, Terminal, RuleApplication, Choice, Sequence, Repetition, Lookahead, Not};
 
 });  // end of UMD

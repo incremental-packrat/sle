@@ -8,15 +8,17 @@
       var incMatcher = es5(require('./incremental'));
  */
 module.exports = ns => {
+
+  // Combinators for instantiating the various PExp subclasses.
   const _ = value => new ns.Terminal(value);
   const app = ruleName => new ns.RuleApplication(ruleName);
   const seq = (...exps) => new ns.Sequence(exps);
   const choice = (...exps) => new ns.Choice(exps);
   const rep = exp => new ns.Repetition(exp);
+  const lookahead = exp => new ns.Lookahead(exp);
   const not = exp => new ns.Not(exp);
 
-  const fixme = str => null;
-
+  // Matches a single character within a character range.
   class Range extends ns.PExp {
     constructor(start, end) {
       super();
@@ -33,8 +35,9 @@ module.exports = ns => {
       return null;
     }
   }
+
   const range = (start, end) => new Range(start, end);
-  const lookahead = exp => not(not(exp));
+
   const lexIgnored = exp => exp;
 
   return new ns.Matcher({

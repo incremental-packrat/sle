@@ -8,7 +8,7 @@
 (function(g,f){if(typeof define==='function'&&define.amd){define([],f)}else if(typeof module==='object'&&module.exports){module.exports=f()}else{Object.assign(g,f())}})(this,function(){
 
 // Import dependencies from standard.js.
-var {Matcher, PExp, Terminal, RuleApplication, Choice, Sequence, Repetition, Not} =
+var {Matcher, PExp, Terminal, RuleApplication, Choice, Sequence, Repetition, Lookahead, Not} =
     typeof module === 'object' ? require('./standard') : window;
 
 class IncrementalMatcher {
@@ -136,7 +136,7 @@ class IncRuleApplication extends PExp {
 // Export the same API as 'standard'.
 return {
   // Same as standard
-  PExp, Terminal, RuleApplication, Choice, Sequence, Repetition, Not,
+  PExp, Terminal, RuleApplication, Choice, Sequence, Repetition, Lookahead, Not,
 
   // Stuff that needs to be overriden with incremental version
   Matcher: IncrementalMatcher,
