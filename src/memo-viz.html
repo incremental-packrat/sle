@@ -7,11 +7,12 @@
 <style>
   body {
     color: #333;
-    font-family: Menlo, Monaco, monospace;
     margin: 20px 20px 20px 60px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   }
   #editorContainer {
     border: 3px solid transparent;
+    font-family: Menlo, Monaco, monospace;
     margin-bottom: 8px;
     transition: border-color .25s ease-in-out;
   }
@@ -114,11 +115,19 @@
     position: absolute;
     top: 0;
   }
+  #grammar {
+    padding-bottom: 20px;
+  }
+  #grammar > pre {
+    font-family: Menlo, Monaco, monospace;
+    font-size: 12px;
+    margin-left: 20px;
+  }
 </style>
 
-<div style="padding-bottom: 20pt;">
+<div id="grammar">
   <h3>Grammar:</h3>
-  <pre style="margin-left: 20pt;">expr = num ”+” num
+  <pre>expr = num ”+” num
      | num ”-” num
 
 num = digit+
