@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <title>Incremental Packrat Parsing</title>
-<link rel="stylesheet" href="third_party/codemirror-5.23.0/lib/codemirror.css">
+<link rel="stylesheet" href="../third_party/codemirror-5.23.0/lib/codemirror.css">
 </head>
 <style>
   body {
@@ -116,13 +116,23 @@
   }
 </style>
 
+<div style="padding-bottom: 20pt;">
+  <h3>Grammar:</h3>
+  <pre style="margin-left: 20pt;">expr = num ”+” num
+     | num ”-” num
+
+num = digit+
+
+digit = ”0”..”9”</pre>
+</div>
+
 <div id="main"></div>
 
-<script src="third_party/codemirror-5.23.0/lib/codemirror.js"></script>
-<script src="third_party/velocity-animate-1.4.2.js"></script>
-<script src="third_party/vue-2.1.10.js"></script>
-<script src="src/standard.js"></script>
-<script src="src/incremental.js"></script>
+<script src="../third_party/codemirror-5.23.0/lib/codemirror.js"></script>
+<script src="../third_party/velocity-animate-1.4.2.js"></script>
+<script src="../third_party/vue-2.1.10.js"></script>
+<script src="standard.js"></script>
+<script src="incremental.js"></script>
 
 <script>
 
