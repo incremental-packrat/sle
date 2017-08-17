@@ -19,8 +19,8 @@ consist of the following:
 - `bench/benchmark-all.sh` => runs the benchmarks, storing the results into
   the data files in `bench/results`
 
-- `src/memo-viz.html` => the [memo table visualization][online-viz] mentioned
-  in Section 3.1 of the paper
+- `memo-viz.html` => the [memo table visualization][online-viz] mentioned in
+  Section 3.1 of the paper
 
 [online-viz]: https://incremental-packrat.github.io/sle/memo-viz.html
 
@@ -66,4 +66,4 @@ All commmands listed here should be run in the root of the artifact directory.
 
   This will save the results into the files in the bench/results dir.
 
-- To see the memo table visualization, open src/memo-viz.html in a web browser.
+- To see the memo table visualization, open memo-viz.html in a web browser.
